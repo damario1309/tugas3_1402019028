@@ -1,0 +1,168 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-family: sans-serif;
+}
+body{
+	background-image: url('../img/pattern.jpg');
+}
+.text{
+	height: 15vh;
+	background-color: #b83b5e;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.text h1{
+	padding: 25px;
+	margin-top: 0px;
+	margin-left: 660px;
+	margin-right: 660px;
+	color: white;
+	background-color: #1E5392;
+}
+.text2{
+	padding: 25px;
+	margin-top: 50px;
+	color: white;
+
+}
+.text3 h2{
+	padding: 0px;
+	margin-top: 0px;
+	margin-left: 23px;
+	color: white;
+}
+label{
+	margin-left: 100px;
+}
+.textfield1 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+.textfield2 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+button{
+	background-color: #0BA0DC;
+	color : black;
+	padding: 8px;
+	margin-left: 500px;
+}
+.text4 h2{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left : 23px;
+	color: white;
+}
+.text5 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.text6 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.text7 h2{
+	padding: 0px;
+	margin-top: 45px;
+	margin-left: 23px;
+	color: white;
+}
+.textfield3 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+.textfield4 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+.textfield5 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+button{
+	background-color: #0BA0DC;
+	color : black;
+	padding: 8px;
+	margin-left: 500px;
+}
+.text8 h2{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left : 23px;
+	color: white;
+}
+.text9 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.text10 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.text11 h2{
+	padding: 0px;
+	margin-top: 45px;
+	margin-left: 23px;
+	color: white;
+}
+.textfield6 h4{
+	padding: 0px;
+	margin-top: 20px;
+	margin-left: 23px;
+	color: white;
+}
+button{
+	background-color: #0BA0DC;
+	color : black;
+	padding: 8px;
+	margin-left: 500px;
+}
+.text12 h2{
+	padding: 0px;
+	margin-top: 19px;
+	margin-left : 23px;
+	color: white;
+}
+.text13 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.text14 h4{
+	padding: 0px;
+	margin-top: 18px;
+	margin-left: 23px;
+	color: white;
+}
+.message{
+color: white;
+margin-top: 70px;
+margin-left: 23px;
+}
+.fotoSilin{
+	margin-left:20px;
+	margin-top: 10px;
+}

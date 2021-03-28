@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>3D Kalkulator</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+		<div class="text">
+			<h1><center>3D Kalkulator</center></h1>
+	 	</div>
+
+<!--MESAGGE-->
+		<div class="message">
+	<script>
+		var nama;
+		var ucapan;
+		var hariSekarang = new Date();
+		var jam = hariSekarang.getHours();
+		nama = prompt("Masukkin Nama Anda");
+			if(jam < 12)
+				ucapan = "Selamat Pagi, ";
+			if(jam >= 12){
+				jam = jam - 12;
+			if(jam < 6)
+				ucapan = "Selamat Siang, ";
+			if(jam >= 6)
+				ucapan = "Selamat Malam, ";
+}
+		document.writeln(ucapan + " " +nama);
+	</script>
+</div>
+
+	 	<div class="text2">
+			<h4>Meghitung volume dan luas permukaan dari silinder, kerucut dan bola.</h4>
+	 	</div>
+
+<!--SILINDER-->
+	 	<div class="text3">
+			<b><h2>Silinder</h2></b>
+	 	</div>
+
+	 	<div class="fotoSilin">
+	 		<img src="img/tabung.png" style="display: block; height: 170px; margin-left: 10px;">
+	 	</div>
+	 	<div class="textfield1">
+	 	<h4> Masukkan jari-jari silinder (dalam meter) <input type="text" id="jari_silinder"><h4>
+	 	</div>
+
+	 	<div class="textfield2">
+	 		<h4> Masukkan tinggi silinder (dalam meter) <input type="text" id="tinggi_silinder"><h4>
+	 	</div>
+<!--BUTTON1-->
+		 <button class = "button_hitung" onclick="hasil_silinder()">Hitung!!</button>
+
+<!--HASIL PERHITUNGAN SILINDER-->
+	 	<div class="text4">
+			<h2>Hasil Perhitungan</h2>
+	 	</div>
+
+	 	<div class="text5">
+			<h4>Luas permukaan: <span id="hasilLuas_silinder"></span> m<sup>3</sup></h4>
+	 	</div>
+
+	 	<div class="text6">
+			<h4>Volume: <span id="hasilVolume_silinder"></span> m<sup>3</sup></h4>
+	 	</div>
+
+<!--KERUCUT-->
+	 	<div class="text7">
+			<h2>Kerucut</h2>
+	 	</div>
+		<div class="fotoKerucut">
+	 		<img src="img/kerucut.png" style="display: block; height: 200px; margin-left: 10px;">
+	 	</div>
+	 	<div class="textfield3">
+	 	<h4> Masukkan jari-jari kerucut (dalam meter) <input type="text" id="jari_kerucut"><h4>
+	 	</div>
+
+	 	<div class="textfield4">
+	 	<h4> Masukkan garis pelukis kerucut (dalam meter) <input type="text" id="garis_kerucut"><h4>
+	 	</div>
+
+	 	<div class="textfield5">
+	 	<h4> Masukkan tinggi kerucut (dalam meter) <input type="text" id="tinggi_kerucut"><h4>
+	 	</div>
+<!--BUTTON2-->
+	 	 <button class = "button_hitung" onclick="hasil_kerucut()">Hitung!!</button>
+
+<!--HASIL PERHITUNGAN KERUCUT-->
+	 	 <div class="text8">
+			<h2>Hasil Perhitungan</h2>
+	 	</div>
+
+	 	<div class="text9">
+			<h4>Luas permukaan: <span id="hasilLuas_kerucut"></span> m<sup>2</sup></h4>
+                           
+	 	</div>
+
+	 	<div class="text10">
+			 <h4>Volume: <span id="hasilVolume_kerucut"></span> m<sup>3</sup></h4>
+	 	</div>
+
+<!--BOLA-->
+	 	<div class="text11">
+			<h2>Bola</h2>
+	 	</div>
+		<div class="fotoBola">
+	 		<img src="img/bola.png">
+	 	</div>
+	 	<div class="textfield6">
+	 	<h4> Masukkan jari-jari bola (dalam meter) <input type="text" id="jari_bola"><h4>
+	 	</div>
+<!--BUTTON3-->
+		<button class = "button_hitung" onclick="hasil_bola()">Hitung!!</button>
+
+<!--HASIL PERHITUNGAN BOLA-->
+		 <div class="text12">
+			<h2>Hasil Perhitungan</h2>
+	 	</div>
+
+	 	<div class="text13">
+			<h4>Luas permukaan: <span id="hasilLuas_bola"></span> m<sup>2</sup></h4>
+	 	</div>
+
+	 	<div class="text14">
+			<h4>Volume: <span id="hasilVolume_bola"></span> m<sup>3</sup></h4>
+	 	</div>
+
+</body>
+<script>
+
+//SILINDER
+        function hasil_silinder() 
+        {
+//UNTUK MASUKKAN HANYA BERUPA ANGKA & MASUKKAN TIDAK BOLEH KOSONG
+	   	var tinggi_silin = (document.getElementById("tinggi_silinder").value);
+		var jari_silin = (document.getElementById("jari_silinder").value);
+		tinggi_silin = tinggi_silin.replace(",", ".");
+		var tinggi_silin2 = tinggi_silin.replace(".", "");
+		console.log(tinggi_silin);
+		jari_silin = jari_silin.replace(",", ".");
+		var jari_silin2 = jari_silin.replace(".", "");
+		console.log(jari_silin);
+		var reg = new RegExp('^\\d+$');
+		if(tinggi_silin == "" || jari_silin == "") {
+		alert("Masukkan Inputan Silinder Tidak Boleh Ada Yang Kosong!");
+		return;
+	}
+	if(!reg.test(tinggi_silin2) || !reg.test(jari_silin2)) {
+		alert("Masukkan Inputan Silider Hanya Boleh Bilangan Positif!");
+		document.getElementById("tinggi_silinder").value = "";
+		document.getElementById("jari_silinder").value = "";
+		document.getElementById("hasilLuas_silinder").innerHTML = "";
+		document.getElementById("hasilVolume_silinder").innerHTML = "";
+		return;
+	}
+//HASIL LUAS SILINDER    
+            var jari = document.getElementById('jari_silinder').value;
+            var tinggi = document.getElementById('tinggi_silinder').value;
+
+            var hasil = 2*Math.PI*(jari*jari)+2*Math.PI*jari*tinggi;
+            document.getElementById('hasilLuas_silinder').innerHTML = hasil.toFixed(2);
+
+
+//HASIL VOLUME SILINDER
+            var jari = document.getElementById('jari_silinder').value;
+            var tinggi = document.getElementById('tinggi_silinder').value;
+
+            var hasil = Math.PI * (jari*jari) * tinggi;
+            document.getElementById('hasilVolume_silinder').innerHTML = hasil.toFixed(2);
+        }
+
+//KERUCUT
+        function hasil_kerucut() 
+        { 
+ //UNTUK MASUKKAN HANYA BERUPA ANGKA & MASUKKAN TIDAK BOLEH KOSONG
+        var tinggi_krct = (document.getElementById("tinggi_kerucut").value);
+		var jari_krct = (document.getElementById("jari_kerucut").value);
+		var garis_krct = (document.getElementById("garis_kerucut").value);
+		var tinggi_krct2 = tinggi_krct.replace(",",".");
+		tinggi_krct2 = tinggi_krct2.replace(".", "");
+		var jari_krct2 = jari_krct.replace(",",".");
+		jari_krct2 = jari_krct2.replace(".","");
+		var garis_krct2 = garis_krct.replace(",",".");
+		garis_krct2 = garis_krct2.replace(".","");
+		var reg = new RegExp('^\\d+$');
+		if(tinggi_krct == "" || jari_krct == "" || garis_krct == "") {
+		alert("Masukkan Inputan Kerucut Tidak Boleh Ada Yang Kosong!");
+		return;
+	}
+
+		if(!reg.test(tinggi_krct2) || !reg.test(jari_krct2) || !reg.test(garis_krct2)) {
+		alert("Masukkan Inputan Kerucut Hanya Boleh Bilangan Positif!");
+		document.getElementById("tinggi_kerucut").value = "";
+		document.getElementById("jari_kerucut").value = "";
+		document.getElementById("garis_kerucut").value = "";
+		document.getElementById("hasilLuas_kerucut").innerHTML = "";
+		document.getElementById("hasilVolume_kerucut").innerHTML = "";
+		return;
+	}
+//HASIL LUAS KERUCUT      
+            var jari = document.getElementById('jari_kerucut').value;
+            var tinggi = document.getElementById('tinggi_kerucut').value;
+            var garis = document.getElementById('garis_kerucut').value;
+
+            var hasil = Math.PI * (jari*jari) + Math.PI * jari * garis;
+            document.getElementById('hasilLuas_kerucut').innerHTML = hasil.toFixed(2);
+
+
+//HASIL VOLUME KERUCUT   
+            var jari = document.getElementById('jari_kerucut').value;
+            var tinggi = document.getElementById('tinggi_kerucut').value;
+
+            var hasil = (1/3) * Math.PI * (jari*jari) * tinggi;
+            document.getElementById('hasilVolume_kerucut').innerHTML = hasil.toFixed(2);
+        }
+
+//BOLA
+        function hasil_bola() 
+        {
+//UNTUK MASUKKAN HANYA BERUPA ANGKA & MASUKKAN TIDAK BOLEH KOSONG
+        var jari_ball = (document.getElementById("jari_bola").value);
+		jari_ball = jari_ball.replace(",",".");
+		var jari_ball2 = jari_ball.replace(".","");
+		if(jari_ball == "") {
+		alert("Masukkan Inputan Bola Tidak Boleh Ada Yang Kosong!");
+		return;
+	}
+		var reg = new RegExp('^\\d+$');
+		if(!reg.test(jari_ball2)) {
+		alert("Masukkan Inputan Bola Hanya Boleh Bilangan Positif!");
+		document.getElementById("jari_bola").value = "";
+		document.getElementById("hasilLuas_bola").innerHTML = "";
+		document.getElementById("hasilVolume_bola").innerHTML = "";
+		return;
+	}
+//HASIL LUAS BOLA
+            var jari = document.getElementById('jari_bola').value;
+
+            var hasil = 4 * Math.PI * jari * jari;
+            document.getElementById('hasilLuas_bola').innerHTML = hasil.toFixed(2);
+
+
+//HASIL VOLUME BOLA
+            var jari = document.getElementById('jari_bola').value;
+
+            var hasil = 4/3 * Math.PI * jari * jari * jari;
+            document.getElementById('hasilVolume_bola').innerHTML = hasil.toFixed(2);
+        }
+</script>
+
+</html>
